@@ -9,3 +9,23 @@ convenience, colon-separated (`:`) parameters in the form of `key=value`.
 Valid parameters are `host`, `port`, `dbname`, `user` and `password`, and additionally `username` is accepted as a synonym for `user`.
 
 All parameters are set as properties on the DSN object, except `dbname` is exposed as `database`.
+
+
+## Installation
+
+`npm install dsn`
+
+## Usage
+
+````js
+var parse = require('dsn').parse
+
+var dsn = parse('mysql:host=db;dbname=myDBname')
+
+/*
+{ 
+  protocol: 'mysql',
+  host: 'db',
+  database: 'myDBname'
+} */
+````
